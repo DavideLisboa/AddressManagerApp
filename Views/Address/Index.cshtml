@@ -1,0 +1,33 @@
+@model IEnumerable<Endereco>
+
+<h2>Your Addresses</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>CEP</th>
+            <th>Logradouro</th>
+            <th>Cidade</th>
+            <th>UF</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var endereco in Model)
+        {
+            <tr>
+                <td>@endereco.Cep</td>
+                <td>@endereco.Logradouro</td>
+                <td>@endereco.Cidade</td>
+                <td>@endereco.Uf</td>
+                <td>
+                    <a href="@Url.Action("Details", new { id = endereco.Id })">Details</a> |
+                    <a href="@Url.Action("Edit", new { id = endereco.Id })">Edit</a> |
+                    <a href="@Url.Action("Delete", new { id = endereco.Id })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create")" class="btn btn-primary">Add New Address</a>

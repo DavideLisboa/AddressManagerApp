@@ -1,0 +1,12 @@
+@model Endereco
+
+<h2>Address Details</h2>
+
+<div>
+    <label>CEP:</label> @Model.Cep
+</div>
+<div>
+    <label>Logradouro:</label> @Model.Logradouro
+</div>
+<!-- Add other fields similarly -->
+<a href="@Url.Action("Index")" class="btn btn-secondary">Back to List</a>

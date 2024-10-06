@@ -1,0 +1,12 @@
+@model Endereco
+
+<h2>Add New Address</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label for="Cep">CEP</label>
+        <input asp-for="Cep" class="form-control" />
+    </div>
+    <!-- Add similar form fields for Logradouro, Numero, etc. -->
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
